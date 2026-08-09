@@ -1,85 +1,149 @@
 ```html
 <!DOCTYPE html>
 <html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>🚀 PisPis Lost in the Space 🚀</title>
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>PisPish Lost in the Space</title>
+
 
 <style>
+
+/* =========================================
+   CONFIGURACIÓN GENERAL
+========================================= */
 
 * {
     box-sizing: border-box;
 }
 
 body {
+
     margin: 0;
+
     background: #080817;
+
     color: white;
-    font-family: "Courier New", monospace;
+
+    font-family:
+        "Courier New",
+        monospace;
+
     overflow: hidden;
+
     text-align: center;
 }
 
+
+/* =========================================
+   TITULO
+========================================= */
+
 h1 {
-    margin: 12px 0 5px;
+
+    margin:
+        12px 0 5px;
+
     font-size: 30px;
+
     letter-spacing: 2px;
+
     color: #42e8ff;
 
     text-shadow:
+
         3px 3px 0 #172080,
+
         0 0 12px #00d9ff;
 }
 
+
+/* =========================================
+   HUD
+========================================= */
+
 #info {
+
     width: 900px;
+
     max-width: 95vw;
+
     margin: 8px auto;
+
     padding: 8px;
 
     background: #11152e;
-    border: 3px solid #42e8ff;
 
-    box-shadow: 0 0 12px #007cff;
+    border:
+        3px solid #42e8ff;
+
+    box-shadow:
+        0 0 12px #007cff;
 
     font-size: 19px;
+
     font-weight: bold;
 }
 
+
+/* BARRA DE ENERGÍA */
+
 .energy-container {
+
     display: inline-block;
 
     width: 180px;
+
     height: 16px;
 
     margin-left: 8px;
 
     background: #222;
-    border: 2px solid white;
+
+    border:
+        2px solid white;
 
     vertical-align: middle;
 }
 
+
 #energy {
+
+    display: block;
+
     width: 100%;
+
     height: 100%;
 
-    background: linear-gradient(
-        90deg,
-        #00ff66,
-        #d9ff00
-    );
+    background:
+        linear-gradient(
+            90deg,
+            #00ff66,
+            #d9ff00
+        );
 
-    transition: width .2s;
+    transition:
+        width .2s;
 }
+
+
+/* =========================================
+   ESCENARIO
+========================================= */
 
 #game {
 
     position: relative;
 
     width: 900px;
+
     max-width: 95vw;
 
     height: 520px;
@@ -88,7 +152,9 @@ h1 {
 
     overflow: hidden;
 
-    border: 5px solid #3f5cff;
+    border:
+        5px solid #3f5cff;
+
 
     background:
 
@@ -110,35 +176,54 @@ h1 {
             transparent 2px
         ),
 
+        radial-gradient(
+            circle at 60% 90%,
+            white 1px,
+            transparent 2px
+        ),
+
         linear-gradient(
             #08052c,
             #11145b 65%,
             #17172c 65%
         );
 
+
     background-size:
+
         140px 140px,
+
         190px 190px,
+
         230px 230px,
+
+        270px 270px,
+
         cover;
 }
 
 
-/* LUNA */
+/* =========================================
+   LUNA
+========================================= */
 
 #moon {
 
     position: absolute;
 
     right: 90px;
+
     top: 45px;
 
     width: 120px;
+
     height: 120px;
 
     border-radius: 50%;
 
+
     background:
+
         radial-gradient(
             circle at 35% 30%,
             #ffffff,
@@ -146,12 +231,16 @@ h1 {
             #405080
         );
 
+
     box-shadow:
+
         0 0 30px #739aff;
 }
 
 
-/* PLATAFORMAS */
+/* =========================================
+   PLATAFORMAS
+========================================= */
 
 .platform {
 
@@ -160,125 +249,164 @@ h1 {
     height: 22px;
 
     background:
+
         linear-gradient(
             #4d607f,
             #17233d
         );
 
-    border-top: 4px solid #7da9ff;
+    border-top:
+        4px solid #7da9ff;
 
     box-shadow:
         0 5px 0 #080b19;
 }
 
+
 #platform1 {
+
     left: 0;
+
     bottom: 45px;
+
     width: 100%;
 }
 
+
 #platform2 {
+
     left: 280px;
+
     bottom: 170px;
+
     width: 180px;
 }
 
+
 #platform3 {
+
     right: 70px;
+
     bottom: 230px;
+
     width: 160px;
 }
 
 
-/* =========================
+/* =========================================
    GATO
-========================= */
+========================================= */
 
 #cat {
 
     position: absolute;
 
     left: 65px;
+
     bottom: 65px;
 
     width: 90px;
+
     height: 90px;
 
     object-fit: cover;
 
     border-radius: 8px;
 
-    border: 4px solid #ff9d00;
+    border:
+        4px solid #ff9d00;
 
     cursor: pointer;
 
+    user-select: none;
+
+
     box-shadow:
+
         0 0 8px #ff9d00,
+
         0 0 20px #ff6500;
+
 
     z-index: 5;
 }
 
 
-/* =========================
+/* =========================================
    BOYERO DE BERNA
-========================= */
+========================================= */
 
 #dog {
 
     position: absolute;
 
     right: 70px;
+
     bottom: 65px;
 
     width: 130px;
+
     height: 130px;
 
     object-fit: cover;
 
     border-radius: 8px;
 
-    border: 4px solid #ffcf70;
+    border:
+        4px solid #ffcf70;
+
 
     box-shadow:
+
         0 0 10px #ffb83d;
 
+
     transition:
+
         transform .12s,
+
         filter .12s;
+
 
     z-index: 5;
 }
 
 
-/* =========================
+/* =========================================
    PROYECTIL
-========================= */
+========================================= */
 
 .shot {
 
     position: absolute;
 
     width: 65px;
+
     height: 65px;
 
     object-fit: cover;
 
     border-radius: 8px;
 
-    border: 3px solid #ffae00;
+
+    border:
+        3px solid #ffae00;
+
 
     box-shadow:
+
         0 0 8px #ffae00,
+
         0 0 20px #ff5500;
+
 
     z-index: 20;
 }
 
 
-/* =========================
-   HIT
-========================= */
+/* =========================================
+   EFECTO HIT
+========================================= */
 
 .hit-effect {
 
@@ -290,26 +418,42 @@ h1 {
 
     color: #ffe600;
 
+
     text-shadow:
+
         3px 3px 0 #ff4a00,
+
         0 0 10px white;
+
 
     z-index: 30;
 
+
     animation:
-        hitAnimation .35s forwards;
+
+        hitAnimation
+        .35s
+        forwards;
 }
+
 
 @keyframes hitAnimation {
 
     0% {
-        transform: scale(.5);
+
+        transform:
+            scale(.5);
+
         opacity: 1;
     }
 
+
     100% {
+
         transform:
+
             scale(1.5)
+
             translateY(-30px);
 
         opacity: 0;
@@ -317,9 +461,9 @@ h1 {
 }
 
 
-/* =========================
+/* =========================================
    MENSAJE FINAL
-========================= */
+========================================= */
 
 #message {
 
@@ -335,49 +479,80 @@ h1 {
 
     font-weight: bold;
 
-    color: #fff;
+    color: white;
+
 
     text-shadow:
+
         4px 4px 0 #273cff,
+
         0 0 15px #00d9ff;
+
 
     z-index: 50;
 }
 
 
-/* =========================
-   BOTON
-========================= */
+/* =========================================
+   CONTROLES
+========================================= */
+
+#controls {
+
+    margin-top: 8px;
+
+    color: #8feaff;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+
+/* =========================================
+   BOTÓN
+========================================= */
 
 button {
 
-    margin-top: 12px;
+    margin-top: 10px;
 
-    padding: 10px 28px;
+    padding:
+        10px 28px;
+
 
     background: #202b72;
 
     color: white;
 
-    border: 3px solid #55dfff;
+
+    border:
+        3px solid #55dfff;
+
 
     font-family:
         "Courier New",
         monospace;
 
+
     font-weight: bold;
 
     cursor: pointer;
 
+
     box-shadow:
+
         0 0 10px #006eff;
 }
+
 
 button:hover {
 
     background: #3547a8;
 
+
     box-shadow:
+
         0 0 20px #00c8ff;
 }
 
@@ -385,116 +560,209 @@ button:hover {
 
 </head>
 
+
 <body>
 
 
+<!-- =====================================
+     TITULO
+===================================== -->
+
 <h1>
+
     🚀 PISPISH LOST IN THE SPACE 🚀
+
 </h1>
 
+
+<!-- =====================================
+     HUD
+===================================== -->
 
 <div id="info">
 
     SHOTS:
-    <span id="shots">0</span>/10
+
+    <span id="shots">
+        0
+    </span>
+
+    /13
+
 
     &nbsp;&nbsp;
+
 
     HITS:
-    <span id="hits">0</span>/10
+
+    <span id="hits">
+        0
+    </span>
+
+    /13
+
 
     &nbsp;&nbsp;
+
 
     ENERGY:
 
-    <span class="energy-container">
-        <span id="energy"></span>
+
+    <span
+        class="energy-container"
+    >
+
+        <span
+            id="energy"
+        ></span>
+
     </span>
 
 </div>
 
 
+<!-- =====================================
+     ESCENARIO
+===================================== -->
+
 <div id="game">
+
+
+    <!-- LUNA -->
 
     <div id="moon"></div>
 
 
+    <!-- PLATAFORMAS -->
+
     <div
         id="platform1"
-        class="platform">
-    </div>
+        class="platform"
+    ></div>
 
 
     <div
         id="platform2"
-        class="platform">
-    </div>
+        class="platform"
+    ></div>
 
 
     <div
         id="platform3"
-        class="platform">
-    </div>
+        class="platform"
+    ></div>
 
 
-    <!-- ======================
-         GATO
-         ====================== -->
+    <!-- GATO -->
 
     <img
+
         id="cat"
+
         src="gato.jpg"
+
         alt="Gato"
+
     >
 
 
-    <!-- ======================
-         BOYERO DE BERNA
-         ====================== -->
+    <!-- BOYERO -->
 
     <img
+
         id="dog"
-        src="perro.jpg"
+
+        src="Perro.jpg"
+
         alt="Boyero de Berna"
+
     >
 
 
-    <div id="message"></div>
+    <!-- MENSAJE -->
+
+    <div
+        id="message"
+    ></div>
+
 
 </div>
 
 
-<button onclick="restart()">
+<!-- =====================================
+     CONTROLES
+===================================== -->
+
+<div id="controls">
+
+    ⬅️ ➡️ MOVER &nbsp;&nbsp;
+
+    ⬆️ ⬇️ VOLAR &nbsp;&nbsp;
+
+    🚀 ESPACIO = DISPARAR
+
+</div>
+
+
+<!-- =====================================
+     BOTÓN
+===================================== -->
+
+<button
+    onclick="restart()"
+>
+
     ↻ RESTART
+
 </button>
 
 
 <script>
 
 
+/* =========================================
+   ELEMENTOS
+========================================= */
+
 const game =
-    document.getElementById("game");
+    document.getElementById(
+        "game"
+    );
 
 
 const cat =
-    document.getElementById("cat");
+    document.getElementById(
+        "cat"
+    );
 
 
 const dog =
-    document.getElementById("dog");
+    document.getElementById(
+        "dog"
+    );
 
 
 const shotsText =
-    document.getElementById("shots");
+    document.getElementById(
+        "shots"
+    );
 
 
 const hitsText =
-    document.getElementById("hits");
+    document.getElementById(
+        "hits"
+    );
 
 
 const energy =
-    document.getElementById("energy");
+    document.getElementById(
+        "energy"
+    );
 
+
+/* =========================================
+   VARIABLES DEL JUEGO
+========================================= */
 
 let shots = 0;
 
@@ -503,45 +771,235 @@ let hits = 0;
 let gameOver = false;
 
 
-/* =================================
-   MOVIMIENTO DEL GATO
-================================= */
+/* =========================================
+   POSICIÓN DEL GATO
+========================================= */
+
+let catX = 65;
 
 let catY = 65;
 
-let catDirection = 1;
 
-let catSpeed = 2;
+/* VELOCIDAD */
 
+const catSpeed = 5;
+
+
+/* =========================================
+   TECLAS
+========================================= */
+
+const keys = {};
+
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+
+        keys[event.key] = true;
+
+
+        /*
+        Evitar scroll
+        */
+
+        if (
+
+            event.key ===
+                "ArrowUp" ||
+
+            event.key ===
+                "ArrowDown" ||
+
+            event.key ===
+                "ArrowLeft" ||
+
+            event.key ===
+                "ArrowRight" ||
+
+            event.key ===
+                " "
+
+        ) {
+
+            event.preventDefault();
+
+        }
+
+
+        /*
+        ESPACIO = DISPARAR
+        */
+
+        if (
+
+            event.key === " " &&
+
+            !event.repeat
+
+        ) {
+
+            shoot();
+
+        }
+
+    }
+);
+
+
+document.addEventListener(
+    "keyup",
+    function(event) {
+
+        keys[event.key] = false;
+
+    }
+);
+
+
+/* =========================================
+   MOVIMIENTO DEL GATO
+========================================= */
 
 function moveCat() {
+
 
     if (gameOver)
         return;
 
 
-    catY +=
-        catDirection *
-        catSpeed;
+    /*
+    IZQUIERDA
+    */
+
+    if (
+        keys["ArrowLeft"]
+    ) {
+
+        catX -=
+            catSpeed;
+
+    }
 
 
-    if (catY > 260) {
+    /*
+    DERECHA
+    */
 
-        catDirection = -1;
+    if (
+        keys["ArrowRight"]
+    ) {
+
+        catX +=
+            catSpeed;
 
     }
 
 
-    if (catY < 55) {
+    /*
+    ARRIBA
+    */
 
-        catDirection = 1;
+    if (
+        keys["ArrowUp"]
+    ) {
+
+        catY +=
+            catSpeed;
 
     }
+
+
+    /*
+    ABAJO
+    */
+
+    if (
+        keys["ArrowDown"]
+    ) {
+
+        catY -=
+            catSpeed;
+
+    }
+
+
+    /*
+    LÍMITES HORIZONTALES
+    */
+
+    const maxX =
+
+        game.clientWidth -
+
+        cat.offsetWidth;
+
+
+    if (
+        catX < 0
+    ) {
+
+        catX = 0;
+
+    }
+
+
+    if (
+        catX > maxX
+    ) {
+
+        catX = maxX;
+
+    }
+
+
+    /*
+    LÍMITES VERTICALES
+    */
+
+    const maxY =
+
+        game.clientHeight -
+
+        cat.offsetHeight -
+
+        45;
+
+
+    if (
+        catY < 45
+    ) {
+
+        catY = 45;
+
+    }
+
+
+    if (
+        catY > maxY
+    ) {
+
+        catY = maxY;
+
+    }
+
+
+    /*
+    APLICAR POSICIÓN
+    */
+
+    cat.style.left =
+        catX + "px";
 
 
     cat.style.bottom =
         catY + "px";
 
+
+    /*
+    SIGUIENTE FRAME
+    */
 
     requestAnimationFrame(
         moveCat
@@ -549,9 +1007,9 @@ function moveCat() {
 }
 
 
-/* =================================
+/* =========================================
    MOVIMIENTO DEL PERRO
-================================= */
+========================================= */
 
 let dogX = 70;
 
@@ -562,23 +1020,38 @@ let dogSpeed = 2.2;
 
 function moveDog() {
 
+
     if (gameOver)
         return;
 
 
     dogX +=
+
         dogDirection *
+
         dogSpeed;
 
 
-    if (dogX < 30) {
+    /*
+    LÍMITE IZQUIERDO
+    */
+
+    if (
+        dogX < 30
+    ) {
 
         dogDirection = 1;
 
     }
 
 
-    if (dogX > 300) {
+    /*
+    LÍMITE DERECHO
+    */
+
+    if (
+        dogX > 300
+    ) {
 
         dogDirection = -1;
 
@@ -595,34 +1068,42 @@ function moveDog() {
 }
 
 
-/* INICIAR MOVIMIENTO */
+/* =========================================
+   INICIAR MOVIMIENTO
+========================================= */
 
 moveCat();
 
 moveDog();
 
 
-/* =================================
+/* =========================================
    DISPARAR
-================================= */
-
-cat.addEventListener(
-    "click",
-    shoot
-);
-
+========================================= */
 
 function shoot() {
 
+
+    /*
+    MÁXIMO 13 TIROS
+    */
+
     if (
+
         gameOver ||
-        shots >= 10
+
+        shots >= 13
+
     ) {
 
         return;
 
     }
 
+
+    /*
+    SUMAR DISPARO
+    */
 
     shots++;
 
@@ -632,11 +1113,11 @@ function shoot() {
 
 
     /*
-       Crear proyectil
-       usando gato.jpg
+    CREAR PROYECTIL
     */
 
     const projectile =
+
         document.createElement(
             "img"
         );
@@ -646,15 +1127,28 @@ function shoot() {
         "shot";
 
 
+    /*
+    USAR LA MISMA IMAGEN
+    DEL GATO
+    */
+
     projectile.src =
         "gato.jpg";
 
 
+    /*
+    POSICIÓN INICIAL
+    */
+
     let x =
-        cat.offsetLeft + 70;
+
+        cat.offsetLeft +
+
+        cat.offsetWidth;
 
 
     let y =
+
         cat.offsetTop + 10;
 
 
@@ -672,227 +1166,294 @@ function shoot() {
 
 
     /*
-       Movimiento del proyectil
+    MOVIMIENTO DEL PROYECTIL
     */
 
     const interval =
-        setInterval(() => {
+
+        setInterval(
+            () => {
 
 
-            x += 14;
+                x += 14;
 
 
-            projectile.style.left =
-                x + "px";
-
-
-            /*
-               Posición del perro
-            */
-
-            const dogLeft =
-                dog.offsetLeft;
-
-
-            const dogRight =
-                dogLeft +
-                dog.offsetWidth;
-
-
-            const dogTop =
-                dog.offsetTop;
-
-
-            const dogBottom =
-                dogTop +
-                dog.offsetHeight;
-
-
-            /*
-               Posición del proyectil
-            */
-
-            const shotTop =
-                projectile.offsetTop;
-
-
-            const shotBottom =
-                shotTop +
-                projectile.offsetHeight;
-
-
-            /*
-               COLISIÓN
-            */
-
-            if (
-
-                x + 65 >= dogLeft &&
-
-                x <= dogRight &&
-
-                shotBottom >= dogTop &&
-
-                shotTop <= dogBottom
-
-            ) {
-
-
-                clearInterval(
-                    interval
-                );
-
-
-                projectile.remove();
-
-
-                hits++;
-
-
-                hitsText.textContent =
-                    hits;
+                projectile.style.left =
+                    x + "px";
 
 
                 /*
-                   Energía
+                POSICIÓN DEL PERRO
                 */
 
-                const energyValue =
-                    100 -
-                    hits * 10;
+                const dogLeft =
+
+                    dog.offsetLeft;
 
 
-                energy.style.width =
-                    energyValue + "%";
+                const dogRight =
+
+                    dogLeft +
+
+                    dog.offsetWidth;
+
+
+                const dogTop =
+
+                    dog.offsetTop;
+
+
+                const dogBottom =
+
+                    dogTop +
+
+                    dog.offsetHeight;
 
 
                 /*
-                   Animación perro
+                POSICIÓN DEL PROYECTIL
                 */
 
-                dog.style.transform =
-                    "translateX(8px) rotate(5deg)";
+                const shotTop =
+
+                    projectile.offsetTop;
 
 
-                dog.style.filter =
-                    "brightness(1.8)";
+                const shotBottom =
+
+                    shotTop +
+
+                    projectile.offsetHeight;
 
 
                 /*
-                   Efecto HIT
+                DETECTAR COLISIÓN
                 */
 
-                const effect =
-                    document.createElement(
-                        "div"
+                if (
+
+                    x + 65 >=
+                        dogLeft &&
+
+                    x <=
+                        dogRight &&
+
+                    shotBottom >=
+                        dogTop &&
+
+                    shotTop <=
+                        dogBottom
+
+                ) {
+
+
+                    /*
+                    DETENER PROYECTIL
+                    */
+
+                    clearInterval(
+                        interval
                     );
 
 
-                effect.className =
-                    "hit-effect";
+                    projectile.remove();
 
 
-                effect.textContent =
-                    "HIT!";
+                    /*
+                    SUMAR IMPACTO
+                    */
+
+                    hits++;
 
 
-                effect.style.left =
-                    dogLeft + "px";
+                    hitsText.textContent =
+                        hits;
 
 
-                effect.style.top =
-                    dogTop - 30 + "px";
+                    /*
+                    ACTUALIZAR ENERGÍA
+                    */
+
+                    const energyValue =
+
+                        100 -
+
+                        (
+                            hits / 13
+                        ) * 100;
 
 
-                game.appendChild(
-                    effect
-                );
+                    energy.style.width =
+
+                        energyValue +
+                        "%";
 
 
-                setTimeout(() => {
-
-                    effect.remove();
-
-                }, 350);
-
-
-                setTimeout(() => {
+                    /*
+                    ANIMACIÓN DEL PERRO
+                    */
 
                     dog.style.transform =
-                        "translateX(0) rotate(0)";
+
+                        "translateX(8px) rotate(5deg)";
+
 
                     dog.style.filter =
-                        "brightness(1)";
 
-                }, 150);
+                        "brightness(1.8)";
 
 
-                /*
-                   VICTORIA
-                */
+                    /*
+                    TEXTO HIT
+                    */
 
-                if (
-                    hits >= 10
-                ) {
+                    const effect =
 
-                    endGame(true);
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    effect.className =
+                        "hit-effect";
+
+
+                    effect.textContent =
+                        "HIT!";
+
+
+                    effect.style.left =
+
+                        dogLeft +
+                        "px";
+
+
+                    effect.style.top =
+
+                        dogTop -
+                        30 +
+                        "px";
+
+
+                    game.appendChild(
+                        effect
+                    );
+
+
+                    /*
+                    ELIMINAR EFECTO
+                    */
+
+                    setTimeout(
+                        () => {
+
+                            effect.remove();
+
+                        },
+                        350
+                    );
+
+
+                    /*
+                    RESTAURAR PERRO
+                    */
+
+                    setTimeout(
+                        () => {
+
+                            dog.style.transform =
+                                "translateX(0) rotate(0)";
+
+                            dog.style.filter =
+                                "brightness(1)";
+
+                        },
+                        150
+                    );
+
+
+                    /*
+                    VICTORIA
+                    */
+
+                    if (
+                        hits >= 13
+                    ) {
+
+                        endGame(
+                            true
+                        );
+
+                    }
+
+
+                    return;
 
                 }
 
 
-                return;
-
-            }
-
-
-            /*
-               Proyectil fuera
-            */
-
-            if (
-                x >
-                game.clientWidth
-            ) {
-
-
-                clearInterval(
-                    interval
-                );
-
-
-                projectile.remove();
-
-
                 /*
-                   GAME OVER
+                PROYECTIL SALE
                 */
 
                 if (
-                    shots >= 10 &&
-                    hits < 10
+
+                    x >
+                    game.clientWidth
+
                 ) {
 
-                    endGame(false);
+
+                    clearInterval(
+                        interval
+                    );
+
+
+                    projectile.remove();
+
+
+                    /*
+                    GAME OVER
+                    */
+
+                    if (
+
+                        shots >= 13 &&
+
+                        hits < 13
+
+                    ) {
+
+                        endGame(
+                            false
+                        );
+
+                    }
 
                 }
 
-            }
+            },
 
-        }, 30);
+            30
+        );
 
 }
 
 
-/* =================================
+/* =========================================
    FINAL DEL JUEGO
-================================= */
+========================================= */
 
-function endGame(won) {
+function endGame(
+    won
+) {
+
 
     gameOver = true;
 
 
     const message =
+
         document.getElementById(
             "message"
         );
@@ -902,28 +1463,55 @@ function endGame(won) {
         "block";
 
 
+    /*
+    GANÓ
+    */
+
     if (won) {
 
+
         message.innerHTML =
-            "★ STAGE CLEAR ★<br>" +
-            "<small>PISPISH WINS!</small>";
+
+            "★ STAGE CLEAR ★" +
+
+            "<br>" +
+
+            "<small>" +
+
+            "PISPISH WINS!" +
+
+            "</small>";
 
     }
 
+
+    /*
+    PERDIÓ
+    */
+
     else {
 
+
         message.innerHTML =
-            "GAME OVER<br>" +
-            "<small>10 SHOTS USED</small>";
+
+            "GAME OVER" +
+
+            "<br>" +
+
+            "<small>" +
+
+            "13 SHOTS USED" +
+
+            "</small>";
 
     }
 
 }
 
 
-/* =================================
+/* =========================================
    REINICIAR
-================================= */
+========================================= */
 
 function restart() {
 
@@ -934,5 +1522,6 @@ function restart() {
 </script>
 
 </body>
+
 </html>
 ```

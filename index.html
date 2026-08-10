@@ -8,7 +8,7 @@
 
 <meta
     name="viewport"
-    content="width=device-width, initial-scale=1.0"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
 >
 
 <title>PisPish Lost in the Space</title>
@@ -16,17 +16,23 @@
 
 <style>
 
-/* =========================================
+/* =====================================================
    CONFIGURACIÓN GENERAL
-========================================= */
+===================================================== */
 
 * {
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
 }
 
+html,
 body {
 
     margin: 0;
+    padding: 0;
+
+    width: 100%;
+    height: 100%;
 
     background: #080817;
 
@@ -39,19 +45,24 @@ body {
     overflow: hidden;
 
     text-align: center;
+
+    touch-action: none;
 }
 
 
-/* =========================================
+/* =====================================================
    TITULO
-========================================= */
+===================================================== */
 
 h1 {
 
-    margin:
-        12px 0 5px;
+    margin: 8px 0 4px;
 
-    font-size: 30px;
+    font-size: clamp(
+        20px,
+        4vw,
+        30px
+    );
 
     letter-spacing: 2px;
 
@@ -65,19 +76,19 @@ h1 {
 }
 
 
-/* =========================================
+/* =====================================================
    HUD
-========================================= */
+===================================================== */
 
 #info {
 
     width: 900px;
 
-    max-width: 95vw;
+    max-width: 96vw;
 
-    margin: 8px auto;
+    margin: 5px auto;
 
-    padding: 8px;
+    padding: 6px;
 
     background: #11152e;
 
@@ -87,23 +98,31 @@ h1 {
     box-shadow:
         0 0 12px #007cff;
 
-    font-size: 19px;
+    font-size: clamp(
+        13px,
+        2.5vw,
+        19px
+    );
 
     font-weight: bold;
 }
 
 
-/* BARRA DE ENERGÍA */
+/* =====================================================
+   BARRA DE ENERGÍA
+===================================================== */
 
 .energy-container {
 
     display: inline-block;
 
-    width: 180px;
+    width: 150px;
 
-    height: 16px;
+    max-width: 25vw;
 
-    margin-left: 8px;
+    height: 14px;
+
+    margin-left: 5px;
 
     background: #222;
 
@@ -134,9 +153,9 @@ h1 {
 }
 
 
-/* =========================================
+/* =====================================================
    ESCENARIO
-========================================= */
+===================================================== */
 
 #game {
 
@@ -144,9 +163,14 @@ h1 {
 
     width: 900px;
 
-    max-width: 95vw;
+    max-width: 96vw;
 
-    height: 520px;
+    height: min(
+        520px,
+        65vh
+    );
+
+    min-height: 360px;
 
     margin: auto;
 
@@ -203,21 +227,21 @@ h1 {
 }
 
 
-/* =========================================
+/* =====================================================
    LUNA
-========================================= */
+===================================================== */
 
 #moon {
 
     position: absolute;
 
-    right: 90px;
+    right: 10%;
 
-    top: 45px;
+    top: 8%;
 
-    width: 120px;
+    width: 100px;
 
-    height: 120px;
+    height: 100px;
 
     border-radius: 50%;
 
@@ -238,9 +262,9 @@ h1 {
 }
 
 
-/* =========================================
+/* =====================================================
    PLATAFORMAS
-========================================= */
+===================================================== */
 
 .platform {
 
@@ -275,7 +299,7 @@ h1 {
 
 #platform2 {
 
-    left: 280px;
+    left: 31%;
 
     bottom: 170px;
 
@@ -285,7 +309,7 @@ h1 {
 
 #platform3 {
 
-    right: 70px;
+    right: 8%;
 
     bottom: 230px;
 
@@ -293,9 +317,9 @@ h1 {
 }
 
 
-/* =========================================
+/* =====================================================
    GATO
-========================================= */
+===================================================== */
 
 #cat {
 
@@ -316,9 +340,10 @@ h1 {
     border:
         4px solid #ff9d00;
 
-    cursor: pointer;
 
     user-select: none;
+
+    -webkit-user-drag: none;
 
 
     box-shadow:
@@ -332,9 +357,9 @@ h1 {
 }
 
 
-/* =========================================
-   BOYERO DE BERNA
-========================================= */
+/* =====================================================
+   PERRO
+===================================================== */
 
 #dog {
 
@@ -372,9 +397,9 @@ h1 {
 }
 
 
-/* =========================================
+/* =====================================================
    PROYECTIL
-========================================= */
+===================================================== */
 
 .shot {
 
@@ -404,9 +429,9 @@ h1 {
 }
 
 
-/* =========================================
-   EFECTO HIT
-========================================= */
+/* =====================================================
+   HIT
+===================================================== */
 
 .hit-effect {
 
@@ -461,9 +486,9 @@ h1 {
 }
 
 
-/* =========================================
+/* =====================================================
    MENSAJE FINAL
-========================================= */
+===================================================== */
 
 #message {
 
@@ -475,7 +500,11 @@ h1 {
 
     display: none;
 
-    font-size: 38px;
+    font-size: clamp(
+        25px,
+        7vw,
+        42px
+    );
 
     font-weight: bold;
 
@@ -493,67 +522,384 @@ h1 {
 }
 
 
-/* =========================================
-   CONTROLES
-========================================= */
+/* =====================================================
+   CONTROLES PC
+===================================================== */
 
 #controls {
 
-    margin-top: 8px;
+    margin-top: 6px;
 
     color: #8feaff;
 
-    font-size: 14px;
+    font-size: 13px;
 
     font-weight: bold;
 }
 
 
-/* =========================================
-   BOTÓN
-========================================= */
+/* =====================================================
+   CONTROLES TÁCTILES
+===================================================== */
 
-button {
+#mobileControls {
 
-    margin-top: 10px;
+    display: none;
+
+    position: fixed;
+
+    left: 0;
+
+    right: 0;
+
+    bottom: 8px;
+
+    z-index: 100;
+
+    pointer-events: none;
+}
+
+
+/* CONTENEDOR DE BOTONES */
+
+.control-row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    width: 100%;
 
     padding:
-        10px 28px;
+        0 18px;
+}
 
 
-    background: #202b72;
+/* GRUPO DIRECCIONAL */
+
+.direction-pad {
+
+    display: grid;
+
+    grid-template-columns:
+        55px 55px 55px;
+
+    grid-template-rows:
+        55px 55px;
+
+    gap: 5px;
+
+    pointer-events: auto;
+}
+
+
+#up {
+
+    grid-column: 2;
+}
+
+
+#left {
+
+    grid-column: 1;
+    grid-row: 2;
+}
+
+
+#down {
+
+    grid-column: 2;
+    grid-row: 2;
+}
+
+
+#right {
+
+    grid-column: 3;
+    grid-row: 2;
+}
+
+
+/* BOTÓN DISPARO */
+
+#fire {
+
+    width: 105px;
+
+    height: 105px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #ff5b35,
+            #9b1700
+        );
+
+    border:
+        4px solid #ffcf70;
 
     color: white;
 
-
-    border:
-        3px solid #55dfff;
-
+    font-size: 20px;
 
     font-family:
         "Courier New",
         monospace;
 
+    font-weight: bold;
+
+    box-shadow:
+
+        0 0 15px #ff4200,
+
+        inset 0 0 15px #ffb000;
+
+    pointer-events: auto;
+
+    user-select: none;
+
+    touch-action: none;
+}
+
+
+/* BOTONES DIRECCIONALES */
+
+.touch-button {
+
+    width: 55px;
+
+    height: 55px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            #354d8d,
+            #151c4c
+        );
+
+    border:
+        3px solid #67ddff;
+
+    color: white;
+
+    font-size: 25px;
+
+    font-weight: bold;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    user-select: none;
+
+    touch-action: none;
+
+    pointer-events: auto;
+
+    box-shadow:
+        0 0 8px #006eff;
+}
+
+
+/* EFECTO AL PRESIONAR */
+
+.touch-button:active,
+#fire:active {
+
+    transform:
+        scale(.90);
+
+    filter:
+        brightness(1.4);
+}
+
+
+/* =====================================================
+   BOTÓN RESTART
+===================================================== */
+
+button#restart {
+
+    margin-top: 7px;
+
+    padding:
+        8px 25px;
+
+    background: #202b72;
+
+    color: white;
+
+    border:
+        3px solid #55dfff;
+
+    font-family:
+        "Courier New",
+        monospace;
 
     font-weight: bold;
 
     cursor: pointer;
 
-
     box-shadow:
-
         0 0 10px #006eff;
 }
 
 
-button:hover {
+/* =====================================================
+   CELULAR
+===================================================== */
 
-    background: #3547a8;
+@media (
+    max-width: 700px
+) {
+
+    h1 {
+
+        margin-top: 4px;
+
+        font-size: 20px;
+
+    }
 
 
-    box-shadow:
+    #info {
 
-        0 0 20px #00c8ff;
+        margin:
+            3px auto;
+
+        padding: 5px;
+
+        font-size: 12px;
+
+    }
+
+
+    .energy-container {
+
+        width: 70px;
+
+        height: 10px;
+
+    }
+
+
+    #game {
+
+        width: 96vw;
+
+        height: 58vh;
+
+        min-height: 300px;
+
+        border-width: 3px;
+
+    }
+
+
+    #cat {
+
+        width: 65px;
+
+        height: 65px;
+
+    }
+
+
+    #dog {
+
+        width: 90px;
+
+        height: 90px;
+
+    }
+
+
+    .shot {
+
+        width: 50px;
+
+        height: 50px;
+
+    }
+
+
+    #moon {
+
+        width: 65px;
+
+        height: 65px;
+
+    }
+
+
+    #controls {
+
+        display: none;
+
+    }
+
+
+    #mobileControls {
+
+        display: block;
+
+    }
+
+
+    #restart {
+
+        display: none;
+
+    }
+
+}
+
+
+/* =====================================================
+   PANTALLA HORIZONTAL
+===================================================== */
+
+@media (
+    max-height: 600px
+) and (
+    orientation: landscape
+) {
+
+    h1 {
+
+        display: none;
+
+    }
+
+
+    #info {
+
+        margin:
+            2px auto;
+
+    }
+
+
+    #game {
+
+        height: 76vh;
+
+    }
+
+
+    #mobileControls {
+
+        bottom: 4px;
+
+    }
+
 }
 
 </style>
@@ -564,155 +910,220 @@ button:hover {
 <body>
 
 
-<!-- =====================================
+<!-- =====================================================
      TITULO
-===================================== -->
+===================================================== -->
 
 <h1>
 
-    🚀 PISPISH LOST IN THE SPACE 🚀
+🚀 PISPISH LOST IN THE SPACE 🚀
 
 </h1>
 
 
-<!-- =====================================
+<!-- =====================================================
      HUD
-===================================== -->
+===================================================== -->
 
 <div id="info">
 
-    SHOTS:
+SHOTS:
 
-    <span id="shots">
-        0
-    </span>
+<span id="shots">
+0
+</span>
 
-    /13
-
-
-    &nbsp;&nbsp;
+/13
 
 
-    HITS:
-
-    <span id="hits">
-        0
-    </span>
-
-    /13
+&nbsp;&nbsp;
 
 
-    &nbsp;&nbsp;
+HITS:
+
+<span id="hits">
+0
+</span>
+
+/13
 
 
-    ENERGY:
+&nbsp;&nbsp;
 
 
-    <span
-        class="energy-container"
-    >
+ENERGY:
 
-        <span
-            id="energy"
-        ></span>
 
-    </span>
+<span
+    class="energy-container"
+>
+
+<span
+    id="energy"
+></span>
+
+</span>
 
 </div>
 
 
-<!-- =====================================
-     ESCENARIO
-===================================== -->
+<!-- =====================================================
+     JUEGO
+===================================================== -->
 
 <div id="game">
 
 
-    <!-- LUNA -->
-
-    <div id="moon"></div>
+<div id="moon"></div>
 
 
-    <!-- PLATAFORMAS -->
-
-    <div
-        id="platform1"
-        class="platform"
-    ></div>
+<div
+    id="platform1"
+    class="platform"
+></div>
 
 
-    <div
-        id="platform2"
-        class="platform"
-    ></div>
+<div
+    id="platform2"
+    class="platform"
+></div>
 
 
-    <div
-        id="platform3"
-        class="platform"
-    ></div>
+<div
+    id="platform3"
+    class="platform"
+></div>
 
 
-    <!-- GATO -->
+<!-- GATO -->
 
-    <img
+<img
 
-        id="cat"
+    id="cat"
 
-        src="gato.jpg"
+    src="gato.jpg"
 
-        alt="Gato"
+    alt="Gato"
 
-    >
-
-
-    <!-- BOYERO -->
-
-    <img
-
-        id="dog"
-
-        src="perro.jpg"
-
-        alt="Boyero de Berna"
-
-    >
+>
 
 
-    <!-- MENSAJE -->
+<!-- PERRO -->
 
-    <div
-        id="message"
-    ></div>
+<img
+
+    id="dog"
+
+    src="perro.jpg"
+
+    alt="Boyero de Berna"
+
+>
+
+
+<!-- MENSAJE -->
+
+<div
+    id="message"
+></div>
 
 
 </div>
 
 
-<!-- =====================================
-     CONTROLES
-===================================== -->
+<!-- =====================================================
+     CONTROLES PC
+===================================================== -->
 
 <div id="controls">
 
-    ⬅️ ➡️ MOVER &nbsp;&nbsp;
+⬅️ ➡️ MOVER
 
-    ⬆️ ⬇️ VOLAR &nbsp;&nbsp;
+&nbsp;&nbsp;
 
-    🚀 ESPACIO = DISPARAR
+⬆️ ⬇️ VOLAR
+
+&nbsp;&nbsp;
+
+🚀 ESPACIO = DISPARAR
 
 </div>
 
 
-<!-- =====================================
-     BOTÓN
-===================================== -->
+<!-- =====================================================
+     CONTROLES CELULAR
+===================================================== -->
+
+<div id="mobileControls">
+
+
+<div class="control-row">
+
+
+<!-- DIRECCIONES -->
+
+<div class="direction-pad">
+
+
+<div
+    id="up"
+    class="touch-button"
+>
+⬆️
+</div>
+
+
+<div
+    id="left"
+    class="touch-button"
+>
+⬅️
+</div>
+
+
+<div
+    id="down"
+    class="touch-button"
+>
+⬇️
+</div>
+
+
+<div
+    id="right"
+    class="touch-button"
+>
+➡️
+</div>
+
+
+</div>
+
+
+<!-- DISPARO -->
 
 <button
+    id="fire"
+>
+FIRE
+</button>
+
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     RESTART PC
+===================================================== -->
+
+<button
+    id="restart"
     onclick="restart()"
 >
 
-    ↻ RESTART
+↻ RESTART
 
 </button>
 
@@ -720,49 +1131,49 @@ button:hover {
 <script>
 
 
-/* =========================================
+/* =====================================================
    ELEMENTOS
-========================================= */
+===================================================== */
 
 const game =
-    document.getElementById(
-        "game"
-    );
+document.getElementById(
+    "game"
+);
 
 
 const cat =
-    document.getElementById(
-        "cat"
-    );
+document.getElementById(
+    "cat"
+);
 
 
 const dog =
-    document.getElementById(
-        "dog"
-    );
+document.getElementById(
+    "dog"
+);
 
 
 const shotsText =
-    document.getElementById(
-        "shots"
-    );
+document.getElementById(
+    "shots"
+);
 
 
 const hitsText =
-    document.getElementById(
-        "hits"
-    );
+document.getElementById(
+    "hits"
+);
 
 
 const energy =
-    document.getElementById(
-        "energy"
-    );
+document.getElementById(
+    "energy"
+);
 
 
-/* =========================================
-   VARIABLES DEL JUEGO
-========================================= */
+/* =====================================================
+   VARIABLES
+===================================================== */
 
 let shots = 0;
 
@@ -771,23 +1182,17 @@ let hits = 0;
 let gameOver = false;
 
 
-/* =========================================
-   POSICIÓN DEL GATO
-========================================= */
-
 let catX = 65;
 
 let catY = 65;
 
 
-/* VELOCIDAD */
-
 const catSpeed = 5;
 
 
-/* =========================================
-   TECLAS
-========================================= */
+/* =====================================================
+   TECLADO
+===================================================== */
 
 const keys = {};
 
@@ -801,25 +1206,25 @@ document.addEventListener(
 
 
         /*
-        Evitar scroll
+        EVITAR SCROLL
         */
 
         if (
 
             event.key ===
-                "ArrowUp" ||
+            "ArrowUp" ||
 
             event.key ===
-                "ArrowDown" ||
+            "ArrowDown" ||
 
             event.key ===
-                "ArrowLeft" ||
+            "ArrowLeft" ||
 
             event.key ===
-                "ArrowRight" ||
+            "ArrowRight" ||
 
             event.key ===
-                " "
+            " "
 
         ) {
 
@@ -829,7 +1234,7 @@ document.addEventListener(
 
 
         /*
-        ESPACIO = DISPARAR
+        ESPACIO DISPARA
         */
 
         if (
@@ -858,9 +1263,9 @@ document.addEventListener(
 );
 
 
-/* =========================================
+/* =====================================================
    MOVIMIENTO DEL GATO
-========================================= */
+===================================================== */
 
 function moveCat() {
 
@@ -868,10 +1273,6 @@ function moveCat() {
     if (gameOver)
         return;
 
-
-    /*
-    IZQUIERDA
-    */
 
     if (
         keys["ArrowLeft"]
@@ -883,10 +1284,6 @@ function moveCat() {
     }
 
 
-    /*
-    DERECHA
-    */
-
     if (
         keys["ArrowRight"]
     ) {
@@ -897,10 +1294,6 @@ function moveCat() {
     }
 
 
-    /*
-    ARRIBA
-    */
-
     if (
         keys["ArrowUp"]
     ) {
@@ -910,10 +1303,6 @@ function moveCat() {
 
     }
 
-
-    /*
-    ABAJO
-    */
 
     if (
         keys["ArrowDown"]
@@ -926,7 +1315,7 @@ function moveCat() {
 
 
     /*
-    LÍMITES HORIZONTALES
+    LÍMITES
     */
 
     const maxX =
@@ -934,6 +1323,15 @@ function moveCat() {
         game.clientWidth -
 
         cat.offsetWidth;
+
+
+    const maxY =
+
+        game.clientHeight -
+
+        cat.offsetHeight -
+
+        45;
 
 
     if (
@@ -952,19 +1350,6 @@ function moveCat() {
         catX = maxX;
 
     }
-
-
-    /*
-    LÍMITES VERTICALES
-    */
-
-    const maxY =
-
-        game.clientHeight -
-
-        cat.offsetHeight -
-
-        45;
 
 
     if (
@@ -986,7 +1371,7 @@ function moveCat() {
 
 
     /*
-    APLICAR POSICIÓN
+    APLICAR
     */
 
     cat.style.left =
@@ -997,19 +1382,16 @@ function moveCat() {
         catY + "px";
 
 
-    /*
-    SIGUIENTE FRAME
-    */
-
     requestAnimationFrame(
         moveCat
     );
+
 }
 
 
-/* =========================================
+/* =====================================================
    MOVIMIENTO DEL PERRO
-========================================= */
+===================================================== */
 
 let dogX = 70;
 
@@ -1032,10 +1414,6 @@ function moveDog() {
         dogSpeed;
 
 
-    /*
-    LÍMITE IZQUIERDO
-    */
-
     if (
         dogX < 30
     ) {
@@ -1044,10 +1422,6 @@ function moveDog() {
 
     }
 
-
-    /*
-    LÍMITE DERECHO
-    */
 
     if (
         dogX > 300
@@ -1065,28 +1439,25 @@ function moveDog() {
     requestAnimationFrame(
         moveDog
     );
+
 }
 
 
-/* =========================================
+/* =====================================================
    INICIAR MOVIMIENTO
-========================================= */
+===================================================== */
 
 moveCat();
 
 moveDog();
 
 
-/* =========================================
+/* =====================================================
    DISPARAR
-========================================= */
+===================================================== */
 
 function shoot() {
 
-
-    /*
-    MÁXIMO 13 TIROS
-    */
 
     if (
 
@@ -1100,10 +1471,6 @@ function shoot() {
 
     }
 
-
-    /*
-    SUMAR DISPARO
-    */
 
     shots++;
 
@@ -1127,17 +1494,12 @@ function shoot() {
         "shot";
 
 
-    /*
-    USAR LA MISMA IMAGEN
-    DEL GATO
-    */
-
     projectile.src =
         "gato.jpg";
 
 
     /*
-    POSICIÓN INICIAL
+    POSICIÓN DEL GATO
     */
 
     let x =
@@ -1149,7 +1511,7 @@ function shoot() {
 
     let y =
 
-        cat.offsetTop + 10;
+        cat.offsetTop + 5;
 
 
     projectile.style.left =
@@ -1166,7 +1528,7 @@ function shoot() {
 
 
     /*
-    MOVIMIENTO DEL PROYECTIL
+    MOVIMIENTO
     */
 
     const interval =
@@ -1183,11 +1545,10 @@ function shoot() {
 
 
                 /*
-                POSICIÓN DEL PERRO
+                PERRO
                 */
 
                 const dogLeft =
-
                     dog.offsetLeft;
 
 
@@ -1199,7 +1560,6 @@ function shoot() {
 
 
                 const dogTop =
-
                     dog.offsetTop;
 
 
@@ -1211,7 +1571,7 @@ function shoot() {
 
 
                 /*
-                POSICIÓN DEL PROYECTIL
+                PROYECTIL
                 */
 
                 const shotTop =
@@ -1227,29 +1587,25 @@ function shoot() {
 
 
                 /*
-                DETECTAR COLISIÓN
+                COLISIÓN
                 */
 
                 if (
 
                     x + 65 >=
-                        dogLeft &&
+                    dogLeft &&
 
                     x <=
-                        dogRight &&
+                    dogRight &&
 
                     shotBottom >=
-                        dogTop &&
+                    dogTop &&
 
                     shotTop <=
-                        dogBottom
+                    dogBottom
 
                 ) {
 
-
-                    /*
-                    DETENER PROYECTIL
-                    */
 
                     clearInterval(
                         interval
@@ -1259,10 +1615,6 @@ function shoot() {
                     projectile.remove();
 
 
-                    /*
-                    SUMAR IMPACTO
-                    */
-
                     hits++;
 
 
@@ -1271,7 +1623,7 @@ function shoot() {
 
 
                     /*
-                    ACTUALIZAR ENERGÍA
+                    ENERGÍA
                     */
 
                     const energyValue =
@@ -1284,27 +1636,23 @@ function shoot() {
 
 
                     energy.style.width =
-
-                        energyValue +
-                        "%";
+                        energyValue + "%";
 
 
                     /*
-                    ANIMACIÓN DEL PERRO
+                    ANIMACIÓN
                     */
 
                     dog.style.transform =
-
                         "translateX(8px) rotate(5deg)";
 
 
                     dog.style.filter =
-
                         "brightness(1.8)";
 
 
                     /*
-                    TEXTO HIT
+                    HIT
                     */
 
                     const effect =
@@ -1323,26 +1671,17 @@ function shoot() {
 
 
                     effect.style.left =
-
-                        dogLeft +
-                        "px";
+                        dogLeft + "px";
 
 
                     effect.style.top =
-
-                        dogTop -
-                        30 +
-                        "px";
+                        dogTop - 30 + "px";
 
 
                     game.appendChild(
                         effect
                     );
 
-
-                    /*
-                    ELIMINAR EFECTO
-                    */
 
                     setTimeout(
                         () => {
@@ -1353,10 +1692,6 @@ function shoot() {
                         350
                     );
 
-
-                    /*
-                    RESTAURAR PERRO
-                    */
 
                     setTimeout(
                         () => {
@@ -1393,7 +1728,7 @@ function shoot() {
 
 
                 /*
-                PROYECTIL SALE
+                FUERA DEL MAPA
                 */
 
                 if (
@@ -1440,9 +1775,199 @@ function shoot() {
 }
 
 
-/* =========================================
+/* =====================================================
+   CONTROLES TÁCTILES
+===================================================== */
+
+
+/*
+   Función para mantener
+   una tecla virtual presionada
+*/
+
+function addTouchControl(
+    elementId,
+    key
+) {
+
+
+    const element =
+        document.getElementById(
+            elementId
+        );
+
+
+    /*
+    TOUCH START
+    */
+
+    element.addEventListener(
+        "touchstart",
+        function(event) {
+
+            event.preventDefault();
+
+            keys[key] = true;
+
+        },
+        {
+            passive: false
+        }
+    );
+
+
+    /*
+    TOUCH END
+    */
+
+    element.addEventListener(
+        "touchend",
+        function(event) {
+
+            event.preventDefault();
+
+            keys[key] = false;
+
+        },
+        {
+            passive: false
+        }
+    );
+
+
+    /*
+    TOUCH CANCEL
+    */
+
+    element.addEventListener(
+        "touchcancel",
+        function(event) {
+
+            event.preventDefault();
+
+            keys[key] = false;
+
+        },
+        {
+            passive: false
+        }
+    );
+
+
+    /*
+    MOUSE
+    Para probar también
+    en computador
+    */
+
+    element.addEventListener(
+        "mousedown",
+        function() {
+
+            keys[key] = true;
+
+        }
+    );
+
+
+    element.addEventListener(
+        "mouseup",
+        function() {
+
+            keys[key] = false;
+
+        }
+    );
+
+
+    element.addEventListener(
+        "mouseleave",
+        function() {
+
+            keys[key] = false;
+
+        }
+    );
+
+}
+
+
+/*
+   CONTROLES
+*/
+
+addTouchControl(
+    "up",
+    "ArrowUp"
+);
+
+
+addTouchControl(
+    "down",
+    "ArrowDown"
+);
+
+
+addTouchControl(
+    "left",
+    "ArrowLeft"
+);
+
+
+addTouchControl(
+    "right",
+    "ArrowRight"
+);
+
+
+/* =====================================================
+   BOTÓN FIRE
+===================================================== */
+
+const fireButton =
+    document.getElementById(
+        "fire"
+    );
+
+
+/*
+   TOCAR
+*/
+
+fireButton.addEventListener(
+    "touchstart",
+    function(event) {
+
+        event.preventDefault();
+
+        shoot();
+
+    },
+    {
+        passive: false
+    }
+);
+
+
+/*
+   CLICK
+*/
+
+fireButton.addEventListener(
+    "click",
+    function(event) {
+
+        event.preventDefault();
+
+        shoot();
+
+    }
+);
+
+
+/* =====================================================
    FINAL DEL JUEGO
-========================================= */
+===================================================== */
 
 function endGame(
     won
@@ -1450,6 +1975,19 @@ function endGame(
 
 
     gameOver = true;
+
+
+    /*
+    Limpiar teclas
+    */
+
+    for (
+        let key in keys
+    ) {
+
+        keys[key] = false;
+
+    }
 
 
     const message =
@@ -1462,10 +2000,6 @@ function endGame(
     message.style.display =
         "block";
 
-
-    /*
-    GANÓ
-    */
 
     if (won) {
 
@@ -1483,11 +2017,6 @@ function endGame(
             "</small>";
 
     }
-
-
-    /*
-    PERDIÓ
-    */
 
     else {
 
@@ -1509,9 +2038,9 @@ function endGame(
 }
 
 
-/* =========================================
+/* =====================================================
    REINICIAR
-========================================= */
+===================================================== */
 
 function restart() {
 

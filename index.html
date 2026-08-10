@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="es">
 
@@ -38,9 +37,7 @@ body {
 
     color: white;
 
-    font-family:
-        "Courier New",
-        monospace;
+    font-family: "Courier New", monospace;
 
     overflow: hidden;
 
@@ -58,20 +55,14 @@ h1 {
 
     margin: 8px 0 4px;
 
-    font-size: clamp(
-        20px,
-        4vw,
-        30px
-    );
+    font-size: clamp(20px, 4vw, 30px);
 
     letter-spacing: 2px;
 
     color: #42e8ff;
 
     text-shadow:
-
         3px 3px 0 #172080,
-
         0 0 12px #00d9ff;
 }
 
@@ -88,23 +79,18 @@ h1 {
 
     margin: 5px auto;
 
-    padding: 6px;
+    padding: 7px;
 
     background: #11152e;
 
-    border:
-        3px solid #42e8ff;
+    border: 3px solid #42e8ff;
 
-    box-shadow:
-        0 0 12px #007cff;
+    box-shadow: 0 0 12px #007cff;
 
-    font-size: clamp(
-        13px,
-        2.5vw,
-        19px
-    );
+    font-size: clamp(12px, 2.5vw, 18px);
 
     font-weight: bold;
+
 }
 
 
@@ -116,9 +102,9 @@ h1 {
 
     display: inline-block;
 
-    width: 150px;
+    width: 130px;
 
-    max-width: 25vw;
+    max-width: 22vw;
 
     height: 14px;
 
@@ -126,8 +112,7 @@ h1 {
 
     background: #222;
 
-    border:
-        2px solid white;
+    border: 2px solid white;
 
     vertical-align: middle;
 }
@@ -148,8 +133,7 @@ h1 {
             #d9ff00
         );
 
-    transition:
-        width .2s;
+    transition: width .2s;
 }
 
 
@@ -165,20 +149,15 @@ h1 {
 
     max-width: 96vw;
 
-    height: min(
-        520px,
-        65vh
-    );
+    height: min(520px, 65vh);
 
-    min-height: 360px;
+    min-height: 350px;
 
     margin: auto;
 
     overflow: hidden;
 
-    border:
-        5px solid #3f5cff;
-
+    border: 5px solid #3f5cff;
 
     background:
 
@@ -212,17 +191,11 @@ h1 {
             #17172c 65%
         );
 
-
     background-size:
-
         140px 140px,
-
         190px 190px,
-
         230px 230px,
-
         270px 270px,
-
         cover;
 }
 
@@ -245,9 +218,7 @@ h1 {
 
     border-radius: 50%;
 
-
     background:
-
         radial-gradient(
             circle at 35% 30%,
             #ffffff,
@@ -255,9 +226,7 @@ h1 {
             #405080
         );
 
-
     box-shadow:
-
         0 0 30px #739aff;
 }
 
@@ -273,14 +242,12 @@ h1 {
     height: 22px;
 
     background:
-
         linear-gradient(
             #4d607f,
             #17233d
         );
 
-    border-top:
-        4px solid #7da9ff;
+    border-top: 4px solid #7da9ff;
 
     box-shadow:
         0 5px 0 #080b19;
@@ -337,23 +304,21 @@ h1 {
 
     border-radius: 8px;
 
-    border:
-        4px solid #ff9d00;
-
+    border: 4px solid #ff9d00;
 
     user-select: none;
 
     -webkit-user-drag: none;
 
-
     box-shadow:
-
         0 0 8px #ff9d00,
-
         0 0 20px #ff6500;
 
-
     z-index: 5;
+
+    transition:
+        filter .1s,
+        transform .1s;
 }
 
 
@@ -377,21 +342,14 @@ h1 {
 
     border-radius: 8px;
 
-    border:
-        4px solid #ffcf70;
-
+    border: 4px solid #ffcf70;
 
     box-shadow:
-
         0 0 10px #ffb83d;
 
-
     transition:
-
         transform .12s,
-
         filter .12s;
-
 
     z-index: 5;
 }
@@ -413,17 +371,11 @@ h1 {
 
     border-radius: 8px;
 
-
-    border:
-        3px solid #ffae00;
-
+    border: 3px solid #ffae00;
 
     box-shadow:
-
         0 0 8px #ffae00,
-
         0 0 20px #ff5500;
-
 
     z-index: 20;
 }
@@ -443,26 +395,63 @@ h1 {
 
     color: #ffe600;
 
-
     text-shadow:
-
         3px 3px 0 #ff4a00,
-
         0 0 10px white;
-
 
     z-index: 30;
 
-
     animation:
-
-        hitAnimation
-        .35s
-        forwards;
+        hitAnimation .35s forwards;
 }
 
 
 @keyframes hitAnimation {
+
+    0% {
+
+        transform: scale(.5);
+
+        opacity: 1;
+    }
+
+    100% {
+
+        transform:
+            scale(1.5)
+            translateY(-30px);
+
+        opacity: 0;
+    }
+}
+
+
+/* =====================================================
+   EFECTO DAÑO AL GATO
+===================================================== */
+
+.damage-effect {
+
+    position: absolute;
+
+    font-size: 32px;
+
+    font-weight: bold;
+
+    color: #ff4444;
+
+    text-shadow:
+        2px 2px 0 #500000,
+        0 0 10px white;
+
+    z-index: 30;
+
+    animation:
+        damageAnimation .6s forwards;
+}
+
+
+@keyframes damageAnimation {
 
     0% {
 
@@ -472,14 +461,11 @@ h1 {
         opacity: 1;
     }
 
-
     100% {
 
         transform:
-
-            scale(1.5)
-
-            translateY(-30px);
+            scale(1.4)
+            translateY(-35px);
 
         opacity: 0;
     }
@@ -500,23 +486,15 @@ h1 {
 
     display: none;
 
-    font-size: clamp(
-        25px,
-        7vw,
-        42px
-    );
+    font-size: clamp(25px, 7vw, 42px);
 
     font-weight: bold;
 
     color: white;
 
-
     text-shadow:
-
         4px 4px 0 #273cff,
-
         0 0 15px #00d9ff;
-
 
     z-index: 50;
 }
@@ -560,8 +538,6 @@ h1 {
 }
 
 
-/* CONTENEDOR DE BOTONES */
-
 .control-row {
 
     display: flex;
@@ -572,12 +548,13 @@ h1 {
 
     width: 100%;
 
-    padding:
-        0 18px;
+    padding: 0 18px;
 }
 
 
-/* GRUPO DIRECCIONAL */
+/* =====================================================
+   PAD DIRECCIONAL
+===================================================== */
 
 .direction-pad {
 
@@ -604,6 +581,7 @@ h1 {
 #left {
 
     grid-column: 1;
+
     grid-row: 2;
 }
 
@@ -611,6 +589,7 @@ h1 {
 #down {
 
     grid-column: 2;
+
     grid-row: 2;
 }
 
@@ -618,11 +597,14 @@ h1 {
 #right {
 
     grid-column: 3;
+
     grid-row: 2;
 }
 
 
-/* BOTÓN DISPARO */
+/* =====================================================
+   BOTÓN FIRE
+===================================================== */
 
 #fire {
 
@@ -639,8 +621,7 @@ h1 {
             #9b1700
         );
 
-    border:
-        4px solid #ffcf70;
+    border: 4px solid #ffcf70;
 
     color: white;
 
@@ -653,9 +634,7 @@ h1 {
     font-weight: bold;
 
     box-shadow:
-
         0 0 15px #ff4200,
-
         inset 0 0 15px #ffb000;
 
     pointer-events: auto;
@@ -666,7 +645,9 @@ h1 {
 }
 
 
-/* BOTONES DIRECCIONALES */
+/* =====================================================
+   BOTONES DIRECCIONALES
+===================================================== */
 
 .touch-button {
 
@@ -682,8 +663,7 @@ h1 {
             #151c4c
         );
 
-    border:
-        3px solid #67ddff;
+    border: 3px solid #67ddff;
 
     color: white;
 
@@ -708,36 +688,30 @@ h1 {
 }
 
 
-/* EFECTO AL PRESIONAR */
-
 .touch-button:active,
 #fire:active {
 
-    transform:
-        scale(.90);
+    transform: scale(.90);
 
-    filter:
-        brightness(1.4);
+    filter: brightness(1.4);
 }
 
 
 /* =====================================================
-   BOTÓN RESTART
+   RESTART
 ===================================================== */
 
 button#restart {
 
     margin-top: 7px;
 
-    padding:
-        8px 25px;
+    padding: 8px 25px;
 
     background: #202b72;
 
     color: white;
 
-    border:
-        3px solid #55dfff;
+    border: 3px solid #55dfff;
 
     font-family:
         "Courier New",
@@ -756,28 +730,23 @@ button#restart {
    CELULAR
 ===================================================== */
 
-@media (
-    max-width: 700px
-) {
+@media (max-width: 700px) {
 
     h1 {
 
         margin-top: 4px;
 
         font-size: 20px;
-
     }
 
 
     #info {
 
-        margin:
-            3px auto;
+        margin: 3px auto;
 
         padding: 5px;
 
         font-size: 12px;
-
     }
 
 
@@ -786,7 +755,6 @@ button#restart {
         width: 70px;
 
         height: 10px;
-
     }
 
 
@@ -799,7 +767,6 @@ button#restart {
         min-height: 300px;
 
         border-width: 3px;
-
     }
 
 
@@ -808,7 +775,6 @@ button#restart {
         width: 65px;
 
         height: 65px;
-
     }
 
 
@@ -817,7 +783,6 @@ button#restart {
         width: 90px;
 
         height: 90px;
-
     }
 
 
@@ -826,7 +791,6 @@ button#restart {
         width: 50px;
 
         height: 50px;
-
     }
 
 
@@ -835,69 +799,56 @@ button#restart {
         width: 65px;
 
         height: 65px;
-
     }
 
 
     #controls {
 
         display: none;
-
     }
 
 
     #mobileControls {
 
         display: block;
-
     }
 
 
     #restart {
 
         display: none;
-
     }
 
 }
 
 
 /* =====================================================
-   PANTALLA HORIZONTAL
+   CELULAR HORIZONTAL
 ===================================================== */
 
-@media (
-    max-height: 600px
-) and (
-    orientation: landscape
-) {
+@media (max-height: 600px) and (orientation: landscape) {
 
     h1 {
 
         display: none;
-
     }
 
 
     #info {
 
-        margin:
-            2px auto;
-
+        margin: 2px auto;
     }
 
 
     #game {
 
         height: 76vh;
-
     }
 
 
     #mobileControls {
 
         bottom: 4px;
-
     }
 
 }
@@ -910,14 +861,8 @@ button#restart {
 <body>
 
 
-<!-- =====================================================
-     TITULO
-===================================================== -->
-
 <h1>
-
 🚀 PISPISH LOST IN THE SPACE 🚀
-
 </h1>
 
 
@@ -927,106 +872,77 @@ button#restart {
 
 <div id="info">
 
-SHOTS:
+    SHOTS:
+    <span id="shots">0</span>/13
 
-<span id="shots">
-0
-</span>
+    &nbsp;&nbsp;
 
-/13
+    HITS:
+    <span id="hits">0</span>/13
 
+    &nbsp;&nbsp;
 
-&nbsp;&nbsp;
+    LIVES:
+    <span id="lives">3</span> ❤️
 
+    &nbsp;&nbsp;
 
-HITS:
+    ENERGY:
 
-<span id="hits">
-0
-</span>
-
-/13
-
-
-&nbsp;&nbsp;
-
-
-ENERGY:
-
-
-<span
-    class="energy-container"
->
-
-<span
-    id="energy"
-></span>
-
-</span>
+    <span class="energy-container">
+        <span id="energy"></span>
+    </span>
 
 </div>
 
 
 <!-- =====================================================
-     JUEGO
+     ESCENARIO
 ===================================================== -->
 
 <div id="game">
 
 
-<div id="moon"></div>
+    <div id="moon"></div>
 
 
-<div
-    id="platform1"
-    class="platform"
-></div>
+    <div
+        id="platform1"
+        class="platform"
+    ></div>
 
 
-<div
-    id="platform2"
-    class="platform"
-></div>
+    <div
+        id="platform2"
+        class="platform"
+    ></div>
 
 
-<div
-    id="platform3"
-    class="platform"
-></div>
+    <div
+        id="platform3"
+        class="platform"
+    ></div>
 
 
-<!-- GATO -->
+    <!-- GATO -->
 
-<img
-
-    id="cat"
-
-    src="gato.jpg"
-
-    alt="Gato"
-
->
+    <img
+        id="cat"
+        src="gato.jpg"
+        alt="Gato"
+    >
 
 
-<!-- PERRO -->
+    <!-- BOYERO DE BERNA -->
 
-<img
-
-    id="dog"
-
-    src="perro.jpg"
-
-    alt="Boyero de Berna"
-
->
+    <img
+        id="dog"
+        src="perro.jpg"
+        alt="Boyero de Berna"
+    >
 
 
-<!-- MENSAJE -->
-
-<div
-    id="message"
-></div>
-
+    <div id="message"></div>
 
 </div>
 
@@ -1037,15 +953,15 @@ ENERGY:
 
 <div id="controls">
 
-⬅️ ➡️ MOVER
+    ⬅️ ➡️ MOVER
 
-&nbsp;&nbsp;
+    &nbsp;&nbsp;
 
-⬆️ ⬇️ VOLAR
+    ⬆️ ⬇️ VOLAR
 
-&nbsp;&nbsp;
+    &nbsp;&nbsp;
 
-🚀 ESPACIO = DISPARAR
+    🚀 ESPACIO = DISPARAR
 
 </div>
 
@@ -1056,119 +972,95 @@ ENERGY:
 
 <div id="mobileControls">
 
-
-<div class="control-row">
-
-
-<!-- DIRECCIONES -->
-
-<div class="direction-pad">
+    <div class="control-row">
 
 
-<div
-    id="up"
-    class="touch-button"
->
-⬆️
-</div>
+        <div class="direction-pad">
 
 
-<div
-    id="left"
-    class="touch-button"
->
-⬅️
-</div>
+            <div
+                id="up"
+                class="touch-button"
+            >
+                ⬆️
+            </div>
 
 
-<div
-    id="down"
-    class="touch-button"
->
-⬇️
-</div>
+            <div
+                id="left"
+                class="touch-button"
+            >
+                ⬅️
+            </div>
 
 
-<div
-    id="right"
-    class="touch-button"
->
-➡️
-</div>
+            <div
+                id="down"
+                class="touch-button"
+            >
+                ⬇️
+            </div>
 
 
-</div>
+            <div
+                id="right"
+                class="touch-button"
+            >
+                ➡️
+            </div>
 
 
-<!-- DISPARO -->
-
-<button
-    id="fire"
->
-FIRE
-</button>
+        </div>
 
 
-</div>
+        <button id="fire">
+            FIRE
+        </button>
+
+
+    </div>
 
 </div>
 
 
 <!-- =====================================================
-     RESTART PC
+     RESTART
 ===================================================== -->
 
 <button
     id="restart"
     onclick="restart()"
 >
-
-↻ RESTART
-
+    ↻ RESTART
 </button>
 
 
 <script>
-
 
 /* =====================================================
    ELEMENTOS
 ===================================================== */
 
 const game =
-document.getElementById(
-    "game"
-);
-
+    document.getElementById("game");
 
 const cat =
-document.getElementById(
-    "cat"
-);
-
+    document.getElementById("cat");
 
 const dog =
-document.getElementById(
-    "dog"
-);
-
+    document.getElementById("dog");
 
 const shotsText =
-document.getElementById(
-    "shots"
-);
-
+    document.getElementById("shots");
 
 const hitsText =
-document.getElementById(
-    "hits"
-);
+    document.getElementById("hits");
 
+const livesText =
+    document.getElementById("lives");
 
 const energy =
-document.getElementById(
-    "energy"
-);
+    document.getElementById("energy");
 
 
 /* =====================================================
@@ -1179,13 +1071,20 @@ let shots = 0;
 
 let hits = 0;
 
+let lives = 3;
+
 let gameOver = false;
 
+let invulnerable = false;
+
+
+/* =====================================================
+   POSICIÓN DEL GATO
+===================================================== */
 
 let catX = 65;
 
 let catY = 65;
-
 
 const catSpeed = 5;
 
@@ -1201,30 +1100,20 @@ document.addEventListener(
     "keydown",
     function(event) {
 
-
         keys[event.key] = true;
 
 
-        /*
-        EVITAR SCROLL
-        */
-
         if (
 
-            event.key ===
-            "ArrowUp" ||
+            event.key === "ArrowUp" ||
 
-            event.key ===
-            "ArrowDown" ||
+            event.key === "ArrowDown" ||
 
-            event.key ===
-            "ArrowLeft" ||
+            event.key === "ArrowLeft" ||
 
-            event.key ===
-            "ArrowRight" ||
+            event.key === "ArrowRight" ||
 
-            event.key ===
-            " "
+            event.key === " "
 
         ) {
 
@@ -1234,7 +1123,7 @@ document.addEventListener(
 
 
         /*
-        ESPACIO DISPARA
+        ESPACIO = DISPARAR
         */
 
         if (
@@ -1269,110 +1158,85 @@ document.addEventListener(
 
 function moveCat() {
 
-
-    if (gameOver)
+    if (gameOver) {
         return;
+    }
 
 
-    if (
-        keys["ArrowLeft"]
-    ) {
+    if (keys["ArrowLeft"]) {
 
-        catX -=
-            catSpeed;
+        catX -= catSpeed;
 
     }
 
 
-    if (
-        keys["ArrowRight"]
-    ) {
+    if (keys["ArrowRight"]) {
 
-        catX +=
-            catSpeed;
+        catX += catSpeed;
 
     }
 
 
-    if (
-        keys["ArrowUp"]
-    ) {
+    if (keys["ArrowUp"]) {
 
-        catY +=
-            catSpeed;
+        catY += catSpeed;
 
     }
 
 
-    if (
-        keys["ArrowDown"]
-    ) {
+    if (keys["ArrowDown"]) {
 
-        catY -=
-            catSpeed;
+        catY -= catSpeed;
 
     }
 
 
     /*
-    LÍMITES
+    LÍMITES HORIZONTALES
     */
 
     const maxX =
-
         game.clientWidth -
-
         cat.offsetWidth;
 
 
-    const maxY =
-
-        game.clientHeight -
-
-        cat.offsetHeight -
-
-        45;
-
-
-    if (
-        catX < 0
-    ) {
+    if (catX < 0) {
 
         catX = 0;
 
     }
 
 
-    if (
-        catX > maxX
-    ) {
+    if (catX > maxX) {
 
         catX = maxX;
 
     }
 
 
-    if (
-        catY < 45
-    ) {
+    /*
+    LÍMITES VERTICALES
+    */
+
+    const maxY =
+        game.clientHeight -
+        cat.offsetHeight -
+        45;
+
+
+    if (catY < 45) {
 
         catY = 45;
 
     }
 
 
-    if (
-        catY > maxY
-    ) {
+    if (catY > maxY) {
 
         catY = maxY;
 
     }
 
-
-    /*
-    APLICAR
-    */
 
     cat.style.left =
         catX + "px";
@@ -1380,6 +1244,13 @@ function moveCat() {
 
     cat.style.bottom =
         catY + "px";
+
+
+    /*
+    COMPROBAR SI EL PERRO TOCÓ AL GATO
+    */
+
+    checkDogCollision();
 
 
     requestAnimationFrame(
@@ -1402,30 +1273,24 @@ let dogSpeed = 2.2;
 
 function moveDog() {
 
-
-    if (gameOver)
+    if (gameOver) {
         return;
+    }
 
 
     dogX +=
-
         dogDirection *
-
         dogSpeed;
 
 
-    if (
-        dogX < 30
-    ) {
+    if (dogX < 30) {
 
         dogDirection = 1;
 
     }
 
 
-    if (
-        dogX > 300
-    ) {
+    if (dogX > 300) {
 
         dogDirection = -1;
 
@@ -1436,8 +1301,252 @@ function moveDog() {
         dogX + "px";
 
 
+    /*
+    COMPROBAR CONTACTO
+    */
+
+    checkDogCollision();
+
+
     requestAnimationFrame(
         moveDog
+    );
+
+}
+
+
+/* =====================================================
+   COLISIÓN PERRO / GATO
+===================================================== */
+
+function checkDogCollision() {
+
+    if (
+        gameOver ||
+        invulnerable
+    ) {
+
+        return;
+
+    }
+
+
+    const catLeft =
+        cat.offsetLeft;
+
+    const catRight =
+        catLeft +
+        cat.offsetWidth;
+
+    const catTop =
+        cat.offsetTop;
+
+    const catBottom =
+        catTop +
+        cat.offsetHeight;
+
+
+    const dogLeft =
+        dog.offsetLeft;
+
+    const dogRight =
+        dogLeft +
+        dog.offsetWidth;
+
+    const dogTop =
+        dog.offsetTop;
+
+    const dogBottom =
+        dogTop +
+        dog.offsetHeight;
+
+
+    /*
+    DETECTAR CONTACTO
+    */
+
+    if (
+
+        catRight > dogLeft &&
+
+        catLeft < dogRight &&
+
+        catBottom > dogTop &&
+
+        catTop < dogBottom
+
+    ) {
+
+        loseLife();
+
+    }
+
+}
+
+
+/* =====================================================
+   QUITAR VIDA AL GATO
+===================================================== */
+
+function loseLife() {
+
+    if (
+        invulnerable ||
+        gameOver
+    ) {
+
+        return;
+
+    }
+
+
+    invulnerable = true;
+
+
+    lives--;
+
+
+    livesText.textContent =
+        lives;
+
+
+    /*
+    EFECTO VISUAL DEL GATO
+    */
+
+    cat.style.filter =
+        "brightness(2)";
+
+
+    cat.style.transform =
+        "scale(0.85)";
+
+
+    /*
+    TEXTO DE DAÑO
+    */
+
+    const effect =
+        document.createElement(
+            "div"
+        );
+
+
+    effect.className =
+        "damage-effect";
+
+
+    effect.textContent =
+        "-1 ❤️";
+
+
+    effect.style.left =
+        cat.offsetLeft + "px";
+
+
+    effect.style.top =
+        cat.offsetTop - 25 + "px";
+
+
+    game.appendChild(
+        effect
+    );
+
+
+    setTimeout(
+        () => {
+
+            effect.remove();
+
+        },
+        600
+    );
+
+
+    /*
+    SIN VIDAS
+    */
+
+    if (lives <= 0) {
+
+        endGame(false);
+
+        return;
+
+    }
+
+
+    /*
+    INVULNERABILIDAD
+    */
+
+    let blinkCount = 0;
+
+
+    const blink =
+        setInterval(
+            () => {
+
+                if (
+                    gameOver
+                ) {
+
+                    clearInterval(
+                        blink
+                    );
+
+                    return;
+
+                }
+
+
+                cat.style.opacity =
+                    cat.style.opacity === "0.3"
+                        ? "1"
+                        : "0.3";
+
+
+                blinkCount++;
+
+
+                if (
+                    blinkCount >= 10
+                ) {
+
+                    clearInterval(
+                        blink
+                    );
+
+                    cat.style.opacity =
+                        "1";
+
+                }
+
+            },
+            100
+        );
+
+
+    /*
+    VOLVER A SER VULNERABLE
+    */
+
+    setTimeout(
+        () => {
+
+            invulnerable = false;
+
+            cat.style.filter =
+                "brightness(1)";
+
+            cat.style.transform =
+                "scale(1)";
+
+            cat.style.opacity =
+                "1";
+
+        },
+        1000
     );
 
 }
@@ -1458,13 +1567,9 @@ moveDog();
 
 function shoot() {
 
-
     if (
-
         gameOver ||
-
         shots >= 13
-
     ) {
 
         return;
@@ -1484,7 +1589,6 @@ function shoot() {
     */
 
     const projectile =
-
         document.createElement(
             "img"
         );
@@ -1499,19 +1603,17 @@ function shoot() {
 
 
     /*
-    POSICIÓN DEL GATO
+    SALE DESDE EL GATO
     */
 
     let x =
-
         cat.offsetLeft +
-
         cat.offsetWidth;
 
 
     let y =
-
-        cat.offsetTop + 5;
+        cat.offsetTop +
+        5;
 
 
     projectile.style.left =
@@ -1528,14 +1630,12 @@ function shoot() {
 
 
     /*
-    MOVIMIENTO
+    MOVIMIENTO DEL PROYECTIL
     */
 
     const interval =
-
         setInterval(
             () => {
-
 
                 x += 14;
 
@@ -1545,44 +1645,33 @@ function shoot() {
 
 
                 /*
-                PERRO
+                POSICIÓN DEL PERRO
                 */
 
                 const dogLeft =
                     dog.offsetLeft;
 
-
                 const dogRight =
-
                     dogLeft +
-
                     dog.offsetWidth;
-
 
                 const dogTop =
                     dog.offsetTop;
 
-
                 const dogBottom =
-
                     dogTop +
-
                     dog.offsetHeight;
 
 
                 /*
-                PROYECTIL
+                POSICIÓN DEL PROYECTIL
                 */
 
                 const shotTop =
-
                     projectile.offsetTop;
 
-
                 const shotBottom =
-
                     shotTop +
-
                     projectile.offsetHeight;
 
 
@@ -1592,17 +1681,13 @@ function shoot() {
 
                 if (
 
-                    x + 65 >=
-                    dogLeft &&
+                    x + 65 >= dogLeft &&
 
-                    x <=
-                    dogRight &&
+                    x <= dogRight &&
 
-                    shotBottom >=
-                    dogTop &&
+                    shotBottom >= dogTop &&
 
-                    shotTop <=
-                    dogBottom
+                    shotTop <= dogBottom
 
                 ) {
 
@@ -1615,6 +1700,10 @@ function shoot() {
                     projectile.remove();
 
 
+                    /*
+                    SUMAR IMPACTO
+                    */
+
                     hits++;
 
 
@@ -1623,16 +1712,17 @@ function shoot() {
 
 
                     /*
-                    ENERGÍA
+                    ENERGÍA DEL PERRO
                     */
 
                     const energyValue =
-
-                        100 -
-
-                        (
-                            hits / 13
-                        ) * 100;
+                        Math.max(
+                            0,
+                            100 -
+                            (
+                                hits / 13
+                            ) * 100
+                        );
 
 
                     energy.style.width =
@@ -1640,7 +1730,7 @@ function shoot() {
 
 
                     /*
-                    ANIMACIÓN
+                    ANIMACIÓN DEL PERRO
                     */
 
                     dog.style.transform =
@@ -1652,11 +1742,10 @@ function shoot() {
 
 
                     /*
-                    HIT
+                    EFECTO HIT
                     */
 
                     const effect =
-
                         document.createElement(
                             "div"
                         );
@@ -1693,6 +1782,10 @@ function shoot() {
                     );
 
 
+                    /*
+                    RESTAURAR PERRO
+                    */
+
                     setTimeout(
                         () => {
 
@@ -1708,16 +1801,14 @@ function shoot() {
 
 
                     /*
-                    VICTORIA
+                    GANAR
                     */
 
                     if (
                         hits >= 13
                     ) {
 
-                        endGame(
-                            true
-                        );
+                        endGame(true);
 
                     }
 
@@ -1728,14 +1819,12 @@ function shoot() {
 
 
                 /*
-                FUERA DEL MAPA
+                PROYECTIL FUERA
                 */
 
                 if (
-
                     x >
                     game.clientWidth
-
                 ) {
 
 
@@ -1748,7 +1837,7 @@ function shoot() {
 
 
                     /*
-                    GAME OVER
+                    SE ACABARON LOS TIROS
                     */
 
                     if (
@@ -1759,16 +1848,13 @@ function shoot() {
 
                     ) {
 
-                        endGame(
-                            false
-                        );
+                        endGame(false);
 
                     }
 
                 }
 
             },
-
             30
         );
 
@@ -1778,12 +1864,6 @@ function shoot() {
 /* =====================================================
    CONTROLES TÁCTILES
 ===================================================== */
-
-
-/*
-   Función para mantener
-   una tecla virtual presionada
-*/
 
 function addTouchControl(
     elementId,
@@ -1798,7 +1878,7 @@ function addTouchControl(
 
 
     /*
-    TOUCH START
+    AL TOCAR
     */
 
     element.addEventListener(
@@ -1817,7 +1897,7 @@ function addTouchControl(
 
 
     /*
-    TOUCH END
+    AL SOLTAR
     */
 
     element.addEventListener(
@@ -1836,7 +1916,7 @@ function addTouchControl(
 
 
     /*
-    TOUCH CANCEL
+    SI SE INTERRUMPE EL TOUCH
     */
 
     element.addEventListener(
@@ -1855,9 +1935,7 @@ function addTouchControl(
 
 
     /*
-    MOUSE
-    Para probar también
-    en computador
+    COMPATIBILIDAD MOUSE
     */
 
     element.addEventListener(
@@ -1893,7 +1971,7 @@ function addTouchControl(
 
 
 /*
-   CONTROLES
+CONTROLES DIRECCIONALES
 */
 
 addTouchControl(
@@ -1931,7 +2009,7 @@ const fireButton =
 
 
 /*
-   TOCAR
+TOUCH
 */
 
 fireButton.addEventListener(
@@ -1950,7 +2028,7 @@ fireButton.addEventListener(
 
 
 /*
-   CLICK
+CLICK
 */
 
 fireButton.addEventListener(
@@ -1969,16 +2047,13 @@ fireButton.addEventListener(
    FINAL DEL JUEGO
 ===================================================== */
 
-function endGame(
-    won
-) {
-
+function endGame(won) {
 
     gameOver = true;
 
 
     /*
-    Limpiar teclas
+    LIMPIAR TECLAS
     */
 
     for (
@@ -1991,7 +2066,6 @@ function endGame(
 
 
     const message =
-
         document.getElementById(
             "message"
         );
@@ -2002,7 +2076,6 @@ function endGame(
 
 
     if (won) {
-
 
         message.innerHTML =
 
@@ -2020,7 +2093,6 @@ function endGame(
 
     else {
 
-
         message.innerHTML =
 
             "GAME OVER" +
@@ -2029,7 +2101,11 @@ function endGame(
 
             "<small>" +
 
-            "13 SHOTS USED" +
+            (
+                lives <= 0
+                    ? "PISPISH HAS NO LIVES"
+                    : "13 SHOTS USED"
+            ) +
 
             "</small>";
 
@@ -2053,4 +2129,3 @@ function restart() {
 </body>
 
 </html>
-```
